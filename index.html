@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apex Gymnastics Academy | Nairobi</title>
+
+    <meta
+        name="description"
+        content="Apex Gymnastics Academy provides professional gymnastics training for children and young athletes in Nairobi."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b12;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 11, 18, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ff4d6d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #d7d9df;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4d6d;
+        }
+
+        .nav-button {
+            background: #ff4d6d;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 11, 18, 0.98) 0%,
+                    rgba(8, 11, 18, 0.85) 45%,
+                    rgba(8, 11, 18, 0.35) 100%
+                ),
+                url("https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 120px 25px 80px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            color: #ff4d6d;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.98;
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #ff4d6d;
+        }
+
+        .hero p {
+            color: #d2d5dc;
+            max-width: 570px;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff4d6d;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 5vw, 3.3rem);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #aeb3bf;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            background: #10141e;
+            padding: 35px 25px;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: #ff4d6d;
+        }
+
+        .stat p {
+            color: #aeb3bf;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           PROGRAMS
+        ========================== */
+
+        .programs {
+            background: #080b12;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: #111622;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,77,109,0.5);
+        }
+
+        .program-number {
+            font-size: 0.8rem;
+            color: #ff4d6d;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .program-card p {
+            color: #aeb3bf;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #10141e;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 550px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #aeb3bf;
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            color: #dce0e7;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: #ff4d6d;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =========================
+           COACHES
+        ========================== */
+
+        .coaches {
+            background: #080b12;
+        }
+
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .coach-card {
+            background: #111622;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .coach-card img {
+            height: 330px;
+            object-fit: cover;
+        }
+
+        .coach-info {
+            padding: 22px;
+        }
+
+        .coach-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .coach-info p {
+            color: #ff4d6d;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           SCHEDULE
+        ========================== */
+
+        .schedule {
+            background: #10141e;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #111622;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .schedule-table th {
+            color: #ff4d6d;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .schedule-table td {
+            color: #d5d8df;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            background: #080b12;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 270px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+
+        .testimonials {
+            background: #10141e;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: #111622;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .stars {
+            color: #ff4d6d;
+            margin-bottom: 18px;
+        }
+
+        .testimonial p {
+            color: #c5c9d1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial strong {
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            background:
+                linear-gradient(
+                    rgba(255, 77, 109, 0.9),
+                    rgba(255, 77, 109, 0.9)
+                ),
+                url("https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .cta .btn {
+            background: #080b12;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #05070b;
+            padding: 50px 25px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand p {
+            color: #8f95a2;
+            max-width: 400px;
+            margin-top: 15px;
+        }
+
+        footer h4 {
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+            color: #8f95a2;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #6f7580;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .program-grid,
+            .coach-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .hero-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 3.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 300px;
+            }
+
+            .schedule-table {
+                font-size: 0.85rem;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                APEX<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#coaches">Coaches</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li>
+                    <a href="#contact" class="nav-button">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <div class="eyebrow">
+                        Nairobi's Next Generation
+                    </div>
+
+                    <h1>
+                        Strong Bodies.<br>
+                        <span>Confident Minds.</span>
+                    </h1>
+
+                    <p>
+                        Professional gymnastics coaching designed to help
+                        children and young athletes build strength,
+                        confidence, discipline and lifelong skills.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#programs" class="btn btn-primary">
+                            Explore Programs
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            Book a Trial
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="stat">
+                    <h3>250+</h3>
+                    <p>Young Athletes</p>
+                </div>
+
+                <div class="stat">
+                    <h3>8</h3>
+                    <p>Training Programs</p>
+                </div>
+
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Passion</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRAMS
+        ========================== -->
+
+        <section class="programs" id="programs">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        What We Teach
+                    </div>
+
+                    <h2>
+                        Training for every level.
+                    </h2>
+
+                    <p>
+                        Whether your child is taking their first step
+                        onto a gymnastics floor or preparing for
+                        competition, our programs grow with them.
+                    </p>
+
+                </div>
+
+
+                <div class="program-grid">
+
+                    <article class="program-card">
+
+                        <div class="program-number">
+                            01 / BEGINNER
+                        </div>
+
+                        <h3>Little Gymnasts</h3>
+
+                        <p>
+                            A fun introduction to movement, balance,
+                            flexibility and basic gymnastics skills
+                            for young children.
+                        </p>
+
+                    </article>
+
+
+                    <article class="program-card">
+
+                        <div class="program-number">
+                            02 / DEVELOPMENT
+                        </div>
+
+                        <h3>Junior Academy</h3>
+
+                        <p>
+                            Structured training focused on technique,
+                            strength, flexibility and skill progression.
+                        </p>
+
+                    </article>
+
+
+                    <article class="program-card">
+
+                        <div class="program-number">
+                            03 / ADVANCED
+                        </div>
+
+                        <h3>Elite Training</h3>
+
+                        <p>
+                            Intensive coaching for athletes preparing
+                            for competitions and advanced gymnastics
+                            performance.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=85"
+                            alt="Young athlete training"
+                        >
+
+                    </div>
+
+
+                    <div class="about-text">
+
+                        <div class="eyebrow">
+                            About Apex
+                        </div>
+
+                        <h2>
+                            More than gymnastics.
+                        </h2>
+
+                        <p>
+                            We believe gymnastics is about more than
+                            learning flips and routines. It teaches
+                            discipline, resilience, confidence and
+                            the courage to keep trying.
+                        </p>
+
+                        <p>
+                            Our coaches create a positive environment
+                            where every athlete can learn at their own
+                            pace while being challenged to become better.
+                        </p>
+
+                        <ul class="check-list">
+
+                            <li>Qualified and experienced coaches</li>
+                            <li>Safe and structured training</li>
+                            <li>Programs for different skill levels</li>
+                            <li>Individual athlete development</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COACHES
+        ========================== -->
+
+        <section class="coaches" id="coaches">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Meet The Team
+                    </div>
+
+                    <h2>
+                        Coaches who care.
+                    </h2>
+
+                    <p>
+                        Our coaching team combines technical knowledge
+                        with a genuine passion for helping young athletes
+                        grow.
+                    </p>
+
+                </div>
+
+
+                <div class="coach-grid">
+
+                    <article class="coach-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=85"
+                            alt="Gymnastics coach"
+                        >
+
+                        <div class="coach-info">
+
+                            <h3>Alex Mwangi</h3>
+
+                            <p>
+                                Head Coach
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="coach-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
+                            alt="Fitness coach"
+                        >
+
+                        <div class="coach-info">
+
+                            <h3>Sarah Wanjiku</h3>
+
+                            <p>
+                                Junior Coach
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="coach-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85"
+                            alt="Athletic coach"
+                        >
+
+                        <div class="coach-info">
+
+                            <h3>Brian Otieno</h3>
+
+                            <p>
+                                Performance Coach
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCHEDULE
+        ========================== -->
+
+        <section class="schedule" id="schedule">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Weekly Schedule
+                    </div>
+
+                    <h2>
+                        Find a time that works.
+                    </h2>
+
+                    <p>
+                        Example schedule — final training times can be
+                        customized for the business.
+                    </p>
+
+                </div>
+
+
+                <table class="schedule-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Day</th>
+                            <th>Program</th>
+                            <th>Time</th>
+                            <th>Level</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Monday</td>
+                            <td>Junior Academy</td>
+                            <td>4:00 PM</td>
+                            <td>Beginner</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Little Gymnasts</td>
+                            <td>4:30 PM</td>
+                            <td>Beginner</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Junior Academy</td>
+                            <td>4:00 PM</td>
+                            <td>Intermediate</td>
+                        </tr>
+
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Elite Training</td>
+                            <td>5:00 PM</td>
+                            <td>Advanced</td>
+                        </tr>
+
+                        <tr>
+                            <td>Saturday</td>
+                            <td>All Programs</td>
+                            <td>9:00 AM</td>
+                            <td>All Levels</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY
+        ========================== -->
+
+        <section class="gallery" id="gallery">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Our Environment
+                    </div>
+
+                    <h2>
+                        Train. Learn. Grow.
+                    </h2>
+
+                    <p>
+                        A glimpse into the energy and discipline behind
+                        every training session.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=900&q=85"
+                            alt="Athlete training"
+                        >
+                    </div>
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=85"
+                            alt="Fitness training"
+                        >
+                    </div>
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85"
+                            alt="Athlete exercising"
+                        >
+                    </div>
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85"
+                            alt="Training session"
+                        >
+                    </div>
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85"
+                            alt="Athlete movement"
+                        >
+                    </div>
+
+                    <div class="gallery-item">
+                        <img
+                            src="https://images.unsplash.com/photo-1517964603305-11c0f6f66012?auto=format&fit=crop&w=900&q=85"
+                            alt="Sports training"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TESTIMONIALS
+        ========================== -->
+
+        <section class="testimonials">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Parent Feedback
+                    </div>
+
+                    <h2>
+                        Built on trust.
+                    </h2>
+
+                </div>
+
+
+                <div class="testimonial-grid">
+
+                    <article class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “My daughter has become much more confident
+                            since joining gymnastics. She looks forward
+                            to every training session.”
+                        </p>
+
+                        <strong>
+                            — Parent of Junior Athlete
+                        </strong>
+
+                    </article>
+
+
+                    <article class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “The coaches are patient, professional and
+                            genuinely interested in helping the children
+                            improve.”
+                        </p>
+
+                        <strong>
+                            — Parent
+                        </strong>
+
+                    </article>
+
+
+                    <article class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “A great environment for children to learn
+                            discipline while having fun.”
+                        </p>
+
+                        <strong>
+                            — Parent
+                        </strong>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta" id="contact">
+
+            <div class="container">
+
+                <h2>
+                    Ready to get moving?
+                </h2>
+
+                <p>
+                    Give your child the confidence, strength and skills
+                    to reach their next level.
+                </p>
+
+                <a
+                    href="https://wa.me/254700000000"
+                    class="btn"
+                    target="_blank"
+                >
+                    WhatsApp Us
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    APEX<span>.</span>
+                </div>
+
+                <p>
+                    Professional gymnastics training for the next
+                    generation of athletes in Nairobi.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Explore</h4>
+
+                <ul>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#coaches">Coaches</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <ul>
+                    <li>Nairobi, Kenya</li>
+                    <li>+254 700 000 000</li>
+                    <li>hello@apexgymnastics.co.ke</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Apex Gymnastics Academy. Demo website created
+            as a concept project.
+
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP BUTTON -->
+
+    <a
+        href="https://wa.me/254700000000"
+        class="whatsapp"
+        target="_blank"
+        aria-label="Contact us on WhatsApp"
+    >
+        WA
+    </a>
+
+</body>
+</html>
